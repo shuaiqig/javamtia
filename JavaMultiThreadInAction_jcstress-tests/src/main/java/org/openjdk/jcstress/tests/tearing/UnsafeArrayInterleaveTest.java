@@ -40,7 +40,9 @@ import org.openjdk.jcstress.util.UnsafeHolder;
 @State
 public class UnsafeArrayInterleaveTest {
 
-    /** Array size: 256 bytes inevitably crosses the cache line on most implementations */
+    /**
+     * Array size: 256 bytes inevitably crosses the cache line on most implementations
+     */
     public static final int SIZE = 256;
 
     public static final int ARRAY_BASE_OFFSET = UnsafeHolder.U.arrayBaseOffset(byte[].class);
@@ -51,14 +53,14 @@ public class UnsafeArrayInterleaveTest {
     @Actor
     public void actor1() {
         for (int i = 0; i < ss.length; i += 2) {
-            UnsafeHolder.U.putByte(ss, (long)(ARRAY_BASE_OFFSET + ARRAY_BASE_SCALE*i), (byte)1);
+            UnsafeHolder.U.putByte(ss, (long) (ARRAY_BASE_OFFSET + ARRAY_BASE_SCALE * i), (byte) 1);
         }
     }
 
     @Actor
     public void actor2() {
         for (int i = 1; i < ss.length; i += 2) {
-            UnsafeHolder.U.putByte(ss, (long)(ARRAY_BASE_OFFSET + ARRAY_BASE_SCALE*i), (byte)2);
+            UnsafeHolder.U.putByte(ss, (long) (ARRAY_BASE_OFFSET + ARRAY_BASE_SCALE * i), (byte) 2);
         }
     }
 

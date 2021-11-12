@@ -12,14 +12,13 @@ http://www.broadview.com.cn/31065
 */
 package io.github.viscent.mtia.ch1;
 
-import java.io.IOException;
-import java.io.PrintWriter;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
 
 @WebServlet("/echo")
 public class EchoServlet extends HttpServlet {

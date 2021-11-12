@@ -40,7 +40,9 @@ import java.util.concurrent.atomic.AtomicIntegerArray;
 @Outcome(id = "[0, 128, 128]", expect = Expect.ACCEPTABLE, desc = "Seeing all updates intact.")
 public class AtomicIntegerArrayInterleaveTest {
 
-    /** Array size: 256 bytes inevitably crosses the cache line on most implementations */
+    /**
+     * Array size: 256 bytes inevitably crosses the cache line on most implementations
+     */
     public static final int SIZE = 256;
 
     @State

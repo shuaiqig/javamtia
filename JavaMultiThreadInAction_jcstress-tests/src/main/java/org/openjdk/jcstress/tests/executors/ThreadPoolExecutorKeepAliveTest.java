@@ -52,14 +52,16 @@ public class ThreadPoolExecutorKeepAliveTest {
     public void actor1() {
         try {
             pool.allowCoreThreadTimeOut(true);
-        } catch (IllegalArgumentException ignored) {}
+        } catch (IllegalArgumentException ignored) {
+        }
     }
 
     @Actor
     public void actor2() {
         try {
             pool.setKeepAliveTime(0, TimeUnit.MILLISECONDS);
-        } catch (IllegalArgumentException ignored) {}
+        } catch (IllegalArgumentException ignored) {
+        }
     }
 
     @Arbiter

@@ -39,7 +39,9 @@ import org.openjdk.jcstress.infra.results.IntResult3;
 @State
 public class ArrayInterleaveTest {
 
-    /** Array size: 256 bytes inevitably crosses the cache line on most implementations */
+    /**
+     * Array size: 256 bytes inevitably crosses the cache line on most implementations
+     */
     public static final int SIZE = 256;
 
     byte[] ss = new byte[SIZE];

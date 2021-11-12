@@ -34,7 +34,7 @@ import org.openjdk.jcstress.tests.init.Grading_DoubleCanSeeMost;
 @JCStressTest
 @JCStressMeta(Grading_DoubleCanSeeMost.class)
 @State
-public class DoubleInstanceInitializerTest  {
+public class DoubleInstanceInitializerTest {
 
     Shell shell;
 

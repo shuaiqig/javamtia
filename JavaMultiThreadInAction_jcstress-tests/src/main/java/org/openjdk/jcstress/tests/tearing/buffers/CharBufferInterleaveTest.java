@@ -41,7 +41,9 @@ import java.nio.CharBuffer;
 @State
 public class CharBufferInterleaveTest {
 
-    /** Array size: 256 bytes inevitably crosses the cache line on most implementations */
+    /**
+     * Array size: 256 bytes inevitably crosses the cache line on most implementations
+     */
     public static final int SIZE = 256;
 
     private final CharBuffer buffer = CharBuffer.allocate(SIZE);
@@ -65,9 +67,15 @@ public class CharBufferInterleaveTest {
         r.r1 = r.r2 = r.r3 = 0;
         for (int i = 0; i < SIZE; i++) {
             switch (buffer.get(i)) {
-                case 'a': r.r2++; break;
-                case 'b': r.r3++; break;
-                default: r.r1++; break;
+                case 'a':
+                    r.r2++;
+                    break;
+                case 'b':
+                    r.r3++;
+                    break;
+                default:
+                    r.r1++;
+                    break;
             }
         }
     }

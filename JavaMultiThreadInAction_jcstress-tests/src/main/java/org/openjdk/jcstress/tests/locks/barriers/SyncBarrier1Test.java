@@ -48,7 +48,8 @@ public class SyncBarrier1Test {
     @Actor
     public void actor1(IntResult2 r) {
         a = 2;
-        synchronized (locks.get()) {}
+        synchronized (locks.get()) {
+        }
         b = 1;
     }
 

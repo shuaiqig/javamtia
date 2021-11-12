@@ -35,7 +35,7 @@ import sun.misc.Contended;
 /**
  * Baseline for FencedAcquireReleaseTest
  *
- *  @author Doug Lea (dl@cs.oswego.edu)
+ * @author Doug Lea (dl@cs.oswego.edu)
  */
 @JCStressTest
 @Outcome(id = "[0, 0]", expect = Expect.ACCEPTABLE, desc = "Before observing releasing write to, any value is OK for $x.")

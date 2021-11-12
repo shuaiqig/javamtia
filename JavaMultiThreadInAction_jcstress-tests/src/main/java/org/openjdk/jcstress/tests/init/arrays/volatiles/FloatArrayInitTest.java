@@ -40,7 +40,7 @@ public class FloatArrayInitTest {
 
     @Actor
     public void actor1() {
-       arr = new float[4];
+        arr = new float[4];
     }
 
     @Actor

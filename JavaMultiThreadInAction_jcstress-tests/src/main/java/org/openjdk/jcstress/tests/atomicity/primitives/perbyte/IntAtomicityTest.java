@@ -38,7 +38,7 @@ import org.openjdk.jcstress.tests.atomicity.primitives.Constants;
  * @author Aleksey Shipilev (aleksey.shipilev@oracle.com)
  */
 @JCStressTest
-@Outcome(id = "[0, 0, 0, 0]",     expect = Expect.ACCEPTABLE, desc = "Default value for the field. Observers are allowed to see the default value for the field, because there is the data race between reader and writer.")
+@Outcome(id = "[0, 0, 0, 0]", expect = Expect.ACCEPTABLE, desc = "Default value for the field. Observers are allowed to see the default value for the field, because there is the data race between reader and writer.")
 @Outcome(id = "[-1, -1, -1, -1]", expect = Expect.ACCEPTABLE, desc = "The value set by the actor thread. Observer sees the complete update.")
 @State
 public class IntAtomicityTest {
@@ -51,7 +51,7 @@ public class IntAtomicityTest {
     }
 
     @Actor
-    public void actor2( ByteResult4 r) {
+    public void actor2(ByteResult4 r) {
         int t = x;
         r.r1 = (byte) ((t >> 0) & 0xFF);
         r.r2 = (byte) ((t >> 8) & 0xFF);

@@ -33,13 +33,13 @@ import org.openjdk.jcstress.annotations.Signal;
 
 @JCStressTest(Mode.Termination)
 @Outcome(id = "TERMINATED", expect = Expect.ACCEPTABLE, desc = "The thread had sucessfully terminated.")
-@Outcome(id = "STALE",      expect = Expect.FORBIDDEN,  desc = "Thread had failed to respond.")
+@Outcome(id = "STALE", expect = Expect.FORBIDDEN, desc = "Thread had failed to respond.")
 public class ThreadSleepTest {
 
     @Actor
     public void actor1() {
         try {
-            Thread.sleep(1000*1000*1000);
+            Thread.sleep(1000 * 1000 * 1000);
         } catch (InterruptedException e) {
             // do nothing, expected
         }

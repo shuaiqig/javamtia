@@ -41,7 +41,9 @@ import java.nio.ShortBuffer;
 @State
 public class ShortBufferInterleaveTest {
 
-    /** Array size: 256 bytes inevitably crosses the cache line on most implementations */
+    /**
+     * Array size: 256 bytes inevitably crosses the cache line on most implementations
+     */
     public static final int SIZE = 256;
 
     private final ShortBuffer buffer = ShortBuffer.allocate(SIZE);

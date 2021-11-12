@@ -39,9 +39,9 @@ import java.util.Random;
 
 @JCStressTest
 @Description("Tests if ByteBuffer breaks the atomicity while doing cross cache-line reads/writes.")
-@Outcome(id = "[0, 0, 0, 0]",     expect = Expect.ACCEPTABLE,      desc = "Seeing the default value, this is a legal race.")
-@Outcome(id = "[-1, -1, -1, -1]", expect = Expect.ACCEPTABLE,      desc = "Seeing the full value, this is a legal behavior.")
-@Outcome(                         expect = Expect.ACCEPTABLE_SPEC, desc = "Seeing the full value, this is a legal behavior.")
+@Outcome(id = "[0, 0, 0, 0]", expect = Expect.ACCEPTABLE, desc = "Seeing the default value, this is a legal race.")
+@Outcome(id = "[-1, -1, -1, -1]", expect = Expect.ACCEPTABLE, desc = "Seeing the full value, this is a legal behavior.")
+@Outcome(expect = Expect.ACCEPTABLE_SPEC, desc = "Seeing the full value, this is a legal behavior.")
 @Ref("http://cs.oswego.edu/pipermail/concurrency-interest/2012-December/010390.html")
 @Ref("http://mail.openjdk.java.net/pipermail/core-libs-dev/2012-December/013133.html")
 @State
@@ -52,13 +52,17 @@ public class ByteBufferIntAtomicityTest {
      * random offset within the byte array.
      */
 
-    /** Array size: 256 bytes inevitably crosses the cache line on most implementations */
+    /**
+     * Array size: 256 bytes inevitably crosses the cache line on most implementations
+     */
     public static final int SIZE = 256;
 
     public static final Random RANDOM = new Random();
     public static final int COMPONENT_SIZE = 4;
 
-    /** Alignment constraint: 4-bytes is default, for integers */
+    /**
+     * Alignment constraint: 4-bytes is default, for integers
+     */
     public static final int ALIGN = Integer.getInteger("align", COMPONENT_SIZE);
 
     public final ByteBuffer bytes;
@@ -67,7 +71,7 @@ public class ByteBufferIntAtomicityTest {
     public ByteBufferIntAtomicityTest() {
         bytes = ByteBuffer.allocate(SIZE);
         bytes.order(ByteOrder.nativeOrder());
-        offset = RANDOM.nextInt((SIZE - COMPONENT_SIZE)/ALIGN)*ALIGN;
+        offset = RANDOM.nextInt((SIZE - COMPONENT_SIZE) / ALIGN) * ALIGN;
     }
 
     @Actor

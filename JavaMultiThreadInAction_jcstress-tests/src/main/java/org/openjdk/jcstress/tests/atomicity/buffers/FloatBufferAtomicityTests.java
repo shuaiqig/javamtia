@@ -46,8 +46,15 @@ public class FloatBufferAtomicityTests {
     @JCStressTest
     @JCStressMeta(GradeFloat.class)
     public static class FloatTest {
-        @Actor public void actor1(MyState s)                { s.b.put(0, -1F);                                    }
-        @Actor public void actor2(MyState s, LongResult1 r) { r.r1 = Float.floatToRawIntBits(s.b.get());          }
+        @Actor
+        public void actor1(MyState s) {
+            s.b.put(0, -1F);
+        }
+
+        @Actor
+        public void actor2(MyState s, LongResult1 r) {
+            r.r1 = Float.floatToRawIntBits(s.b.get());
+        }
     }
 
 }

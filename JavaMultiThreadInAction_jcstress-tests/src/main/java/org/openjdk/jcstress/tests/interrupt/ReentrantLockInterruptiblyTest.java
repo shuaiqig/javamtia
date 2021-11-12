@@ -37,12 +37,15 @@ import java.util.concurrent.locks.ReentrantLock;
 
 @JCStressTest(Mode.Termination)
 @Outcome(id = "TERMINATED", expect = Expect.ACCEPTABLE, desc = "The thread had sucessfully terminated.")
-@Outcome(id = "STALE",      expect = Expect.FORBIDDEN,  desc = "Thread had failed to respond.")
+@Outcome(id = "STALE", expect = Expect.FORBIDDEN, desc = "Thread had failed to respond.")
 @State
 public class ReentrantLockInterruptiblyTest {
 
     public final Lock lock = new ReentrantLock();
-    public ReentrantLockInterruptiblyTest() { lock.lock(); }
+
+    public ReentrantLockInterruptiblyTest() {
+        lock.lock();
+    }
 
     @Actor
     public void actor1() {

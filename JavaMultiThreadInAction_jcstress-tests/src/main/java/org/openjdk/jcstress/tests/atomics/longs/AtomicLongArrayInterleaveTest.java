@@ -41,7 +41,9 @@ import java.util.concurrent.atomic.AtomicLongArray;
 @State
 public class AtomicLongArrayInterleaveTest {
 
-    /** Array size: 256 bytes inevitably crosses the cache line on most implementations */
+    /**
+     * Array size: 256 bytes inevitably crosses the cache line on most implementations
+     */
     public static final int SIZE = 256;
 
     AtomicLongArray ala = new AtomicLongArray(SIZE);

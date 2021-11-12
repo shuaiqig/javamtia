@@ -46,8 +46,15 @@ public class IntBufferAtomicityTests {
     @JCStressTest
     @JCStressMeta(GradeInt.class)
     public static class IntTest {
-        @Actor public void actor1(MyState s)                { s.b.put(0, -1);                                       }
-        @Actor public void actor2(MyState s, LongResult1 r) { r.r1 = s.b.get();                                     }
+        @Actor
+        public void actor1(MyState s) {
+            s.b.put(0, -1);
+        }
+
+        @Actor
+        public void actor2(MyState s, LongResult1 r) {
+            r.r1 = s.b.get();
+        }
     }
 
 }

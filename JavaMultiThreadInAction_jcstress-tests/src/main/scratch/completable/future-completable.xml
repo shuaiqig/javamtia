@@ -89,14 +89,20 @@
         </unmatched>
     </template>
 
-    <test template="consistentGet" name="org.openjdk.jcstress.tests.future.completable.GetConflictTests$Complete_Complete_Get" />
-    <test template="consistentGet" name="org.openjdk.jcstress.tests.future.completable.GetConflictTests$Complete_Complete_GetNow" />
+    <test template="consistentGet"
+          name="org.openjdk.jcstress.tests.future.completable.GetConflictTests$Complete_Complete_Get"/>
+    <test template="consistentGet"
+          name="org.openjdk.jcstress.tests.future.completable.GetConflictTests$Complete_Complete_GetNow"/>
 
-    <test template="consistentGet_Except" name="org.openjdk.jcstress.tests.future.completable.GetConflictTests$Complete_CompleteExcept_Get" />
-    <test template="consistentGet_Except" name="org.openjdk.jcstress.tests.future.completable.GetConflictTests$Complete_CompleteExcept_GetNow" />
+    <test template="consistentGet_Except"
+          name="org.openjdk.jcstress.tests.future.completable.GetConflictTests$Complete_CompleteExcept_Get"/>
+    <test template="consistentGet_Except"
+          name="org.openjdk.jcstress.tests.future.completable.GetConflictTests$Complete_CompleteExcept_GetNow"/>
 
-    <test template="consistentExcept_Except" name="org.openjdk.jcstress.tests.future.completable.GetConflictTests$CompleteExcept_CompleteExcept_Get" />
-    <test template="consistentExcept_Except" name="org.openjdk.jcstress.tests.future.completable.GetConflictTests$CompleteExcept_CompleteExcept_GetNow" />
+    <test template="consistentExcept_Except"
+          name="org.openjdk.jcstress.tests.future.completable.GetConflictTests$CompleteExcept_CompleteExcept_Get"/>
+    <test template="consistentExcept_Except"
+          name="org.openjdk.jcstress.tests.future.completable.GetConflictTests$CompleteExcept_CompleteExcept_GetNow"/>
 
     <test name="org.openjdk.jcstress.tests.future.completable.GetRaceTests$Complete_Get">
         <contributed-by>Aleksey Shipilev (aleksey.shipilev@oracle.com)</contributed-by>

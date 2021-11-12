@@ -41,7 +41,8 @@ public class SyncBarrier3Test {
     @Actor
     public void actor1() {
         a = 2;
-        synchronized (this) {}
+        synchronized (this) {
+        }
         b = 1;
     }
 

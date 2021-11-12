@@ -34,7 +34,7 @@ import org.openjdk.jcstress.tests.init.Grading_IntShouldSeeFull;
 @JCStressTest
 @JCStressMeta(Grading_IntShouldSeeFull.class)
 @State
-public class ByteFinalTest{
+public class ByteFinalTest {
 
     Shell shell;
 

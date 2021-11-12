@@ -35,7 +35,7 @@ import java.util.concurrent.TimeUnit;
 
 @JCStressTest(Mode.Termination)
 @Outcome(id = "TERMINATED", expect = Expect.ACCEPTABLE, desc = "The thread had sucessfully terminated.")
-@Outcome(id = "STALE",      expect = Expect.FORBIDDEN,  desc = "Thread had failed to respond.")
+@Outcome(id = "STALE", expect = Expect.FORBIDDEN, desc = "Thread had failed to respond.")
 public class TimeUnitSleepTest {
 
     @Actor

@@ -37,12 +37,12 @@ import sun.misc.Contended;
 /**
  * Baseline for FencedDekkerTest
  *
- *  @author Doug Lea (dl@cs.oswego.edu)
+ * @author Doug Lea (dl@cs.oswego.edu)
  */
 @JCStressTest
 @Description("Tests the sequential consistency on Dekker-like construction using explicit fences, not volatiles")
 @Outcome(id = {"[0, 1]", "[1, 0]", "[1, 1]"}, expect = Expect.ACCEPTABLE, desc = "Acceptable under sequential consistency")
-@Outcome(id = {"[0, 0]"},                     expect = Expect.ACCEPTABLE_INTERESTING, desc = "Acceptable with no sequential consistency enforced")
+@Outcome(id = {"[0, 0]"}, expect = Expect.ACCEPTABLE_INTERESTING, desc = "Acceptable with no sequential consistency enforced")
 @State
 public class UnfencedDekkerTest {
 

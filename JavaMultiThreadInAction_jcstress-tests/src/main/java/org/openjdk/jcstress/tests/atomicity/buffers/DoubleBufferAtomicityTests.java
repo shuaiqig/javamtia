@@ -46,8 +46,15 @@ public class DoubleBufferAtomicityTests {
     @JCStressTest
     @JCStressMeta(GradeDouble.class)
     public static class DoubleTest {
-        @Actor public void actor1(MyState s)                { s.b.put(0, -1D);                              }
-        @Actor public void actor2(MyState s, LongResult1 r) { r.r1 = Double.doubleToRawLongBits(s.b.get()); }
+        @Actor
+        public void actor1(MyState s) {
+            s.b.put(0, -1D);
+        }
+
+        @Actor
+        public void actor2(MyState s, LongResult1 r) {
+            r.r1 = Double.doubleToRawLongBits(s.b.get());
+        }
     }
 
 }

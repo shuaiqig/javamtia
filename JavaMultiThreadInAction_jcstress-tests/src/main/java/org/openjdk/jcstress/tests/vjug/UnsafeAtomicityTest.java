@@ -35,9 +35,9 @@ import org.openjdk.jcstress.util.UnsafeHolder;
 
 @JCStressTest
 @Description("Tests if Unsafe breaks the atomicity while doing cross cache-line reads/writes.")
-@Outcome(id = "[0]",  expect = Expect.ACCEPTABLE,             desc = "Seeing the default value, this is a legal race.")
-@Outcome(id = "[-1]", expect = Expect.ACCEPTABLE,             desc = "Seeing the full value, this is a legal behavior.")
-@Outcome(             expect = Expect.ACCEPTABLE_INTERESTING, desc = "Other cases exhibit the breach of read/write atomicity.")
+@Outcome(id = "[0]", expect = Expect.ACCEPTABLE, desc = "Seeing the default value, this is a legal race.")
+@Outcome(id = "[-1]", expect = Expect.ACCEPTABLE, desc = "Seeing the full value, this is a legal behavior.")
+@Outcome(expect = Expect.ACCEPTABLE_INTERESTING, desc = "Other cases exhibit the breach of read/write atomicity.")
 @State
 public class UnsafeAtomicityTest {
 
@@ -47,7 +47,7 @@ public class UnsafeAtomicityTest {
     public UnsafeAtomicityTest() {
         final int size = 1024;
         addr = UnsafeHolder.U.allocateMemory(size);
-        UnsafeHolder.U.setMemory(addr, size, (byte)0);
+        UnsafeHolder.U.setMemory(addr, size, (byte) 0);
         offset = ((addr + 512) & ~255) - 2;
     }
 

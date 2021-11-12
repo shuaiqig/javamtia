@@ -34,7 +34,7 @@ import org.openjdk.jcstress.infra.results.IntResult2;
 /**
  * Baseline for FencedPublicationTest
  *
- *  @author Doug Lea (dl@cs.oswego.edu)
+ * @author Doug Lea (dl@cs.oswego.edu)
  */
 @JCStressTest
 @Outcome(id = "[0, 0]", expect = Expect.ACCEPTABLE, desc = "Data not yet published")
@@ -64,8 +64,7 @@ public class UnfencedPublicationTest {
         if (d == null) {
             sy = 0;
             sx = 0;
-        }
-        else {
+        } else {
             sy = 1;
             sx = d.x;
         }

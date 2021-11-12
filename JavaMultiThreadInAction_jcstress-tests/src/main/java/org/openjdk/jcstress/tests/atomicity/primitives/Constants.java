@@ -28,9 +28,9 @@ public class Constants {
 
     public static final double DOUBLE_SAMPLE = Double.longBitsToDouble(0xFFFFFFFFFFFFFFFFL);
     public static final float FLOAT_SAMPLE = Float.intBitsToFloat(0xFFFFFFFF);
-    public static final char CHAR_SAMPLE = (char)0xFFFF;
-    public static final byte BYTE_SAMPLE = (byte)0xFF;
-    public static final short SHORT_SAMPLE = (short)0xFFFF;
+    public static final char CHAR_SAMPLE = (char) 0xFFFF;
+    public static final byte BYTE_SAMPLE = (byte) 0xFF;
+    public static final short SHORT_SAMPLE = (short) 0xFFFF;
     public static final int INT_SAMPLE = 0xFFFFFFFF;
     public static final long LONG_SAMPLE = 0xFFFFFFFFFFFFFFFFL;
 

@@ -39,7 +39,7 @@ import java.util.concurrent.TimeUnit;
 
 @JCStressTest(Mode.Termination)
 @Outcome(id = "TERMINATED", expect = Expect.ACCEPTABLE, desc = "The thread had sucessfully terminated.")
-@Outcome(id = "STALE",      expect = Expect.FORBIDDEN,  desc = "Thread had failed to respond.")
+@Outcome(id = "STALE", expect = Expect.FORBIDDEN, desc = "Thread had failed to respond.")
 @Ref("http://altair.cs.oswego.edu/pipermail/concurrency-interest/2012-August/009654.html")
 @Ref("http://cs.oswego.edu/pipermail/concurrency-interest/attachments/20120808/cad656d6/attachment.html")
 @Ref("http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=7190310")

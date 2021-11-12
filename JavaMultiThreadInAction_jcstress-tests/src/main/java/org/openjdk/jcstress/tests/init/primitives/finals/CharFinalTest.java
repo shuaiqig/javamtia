@@ -54,7 +54,7 @@ public class CharFinalTest {
     @Actor
     public void actor2(CharResult1 r) {
         Shell sh = shell;
-        r.r1 = (sh == null) ? 'N' : (char)(sh.x + 'A');
+        r.r1 = (sh == null) ? 'N' : (char) (sh.x + 'A');
     }
 
 }

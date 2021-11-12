@@ -41,7 +41,9 @@ import java.nio.FloatBuffer;
 @State
 public class FloatBufferInterleaveTest {
 
-    /** Array size: 256 bytes inevitably crosses the cache line on most implementations */
+    /**
+     * Array size: 256 bytes inevitably crosses the cache line on most implementations
+     */
     public static final int SIZE = 256;
 
     public static final float F1 = (float) (Math.PI * 1);

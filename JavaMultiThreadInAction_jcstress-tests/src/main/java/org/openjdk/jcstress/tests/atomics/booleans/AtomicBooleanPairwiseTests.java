@@ -51,43 +51,85 @@ public class AtomicBooleanPairwiseTests {
     @JCStressTest
     @JCStressMeta(Meta.class)
     public static class CAS_CAS {
-        @Actor public void actor1(MyState s, IntResult2 r) { r.r1 = s.compareAndSet(false, true) ? 1 : 0; }
-        @Actor public void actor2(MyState s, IntResult2 r) { r.r2 = s.compareAndSet(false, true) ? 1 : 0; }
+        @Actor
+        public void actor1(MyState s, IntResult2 r) {
+            r.r1 = s.compareAndSet(false, true) ? 1 : 0;
+        }
+
+        @Actor
+        public void actor2(MyState s, IntResult2 r) {
+            r.r2 = s.compareAndSet(false, true) ? 1 : 0;
+        }
     }
 
     @JCStressTest
     @JCStressMeta(Meta.class)
     public static class CAS_GetAndSet {
-        @Actor public void actor1(MyState s, IntResult2 r) { r.r1 = s.compareAndSet(false, true) ? 1 : 0; }
-        @Actor public void actor2(MyState s, IntResult2 r) { r.r2 = s.getAndSet(true) ? 0 : 1; }
+        @Actor
+        public void actor1(MyState s, IntResult2 r) {
+            r.r1 = s.compareAndSet(false, true) ? 1 : 0;
+        }
+
+        @Actor
+        public void actor2(MyState s, IntResult2 r) {
+            r.r2 = s.getAndSet(true) ? 0 : 1;
+        }
     }
 
     @JCStressTest
     @JCStressMeta(Meta.class)
     public static class CAS_WCAS {
-        @Actor public void actor1(MyState s, IntResult2 r) { r.r1 = s.compareAndSet(false, true) ? 1 : 0; }
-        @Actor public void actor2(MyState s, IntResult2 r) { r.r2 = s.weakCompareAndSet(false, true) ? 1 : 0; }
+        @Actor
+        public void actor1(MyState s, IntResult2 r) {
+            r.r1 = s.compareAndSet(false, true) ? 1 : 0;
+        }
+
+        @Actor
+        public void actor2(MyState s, IntResult2 r) {
+            r.r2 = s.weakCompareAndSet(false, true) ? 1 : 0;
+        }
     }
 
     @JCStressTest
     @JCStressMeta(Meta.class)
     public static class GetAndSet_GetAndSet {
-        @Actor public void actor1(MyState s, IntResult2 r) { r.r1 = s.getAndSet(true) ? 0 : 1; }
-        @Actor public void actor2(MyState s, IntResult2 r) { r.r2 = s.getAndSet(true) ? 0 : 1; }
+        @Actor
+        public void actor1(MyState s, IntResult2 r) {
+            r.r1 = s.getAndSet(true) ? 0 : 1;
+        }
+
+        @Actor
+        public void actor2(MyState s, IntResult2 r) {
+            r.r2 = s.getAndSet(true) ? 0 : 1;
+        }
     }
 
     @JCStressTest
     @JCStressMeta(Meta.class)
     public static class GetAndSet_WCAS {
-        @Actor public void actor1(MyState s, IntResult2 r) { r.r1 = s.getAndSet(true) ? 0 : 1; }
-        @Actor public void actor2(MyState s, IntResult2 r) { r.r2 = s.weakCompareAndSet(false, true) ? 1 : 0; }
+        @Actor
+        public void actor1(MyState s, IntResult2 r) {
+            r.r1 = s.getAndSet(true) ? 0 : 1;
+        }
+
+        @Actor
+        public void actor2(MyState s, IntResult2 r) {
+            r.r2 = s.weakCompareAndSet(false, true) ? 1 : 0;
+        }
     }
 
     @JCStressTest
     @JCStressMeta(Meta.class)
     public static class WCAS_WCAS {
-        @Actor public void actor1(MyState s, IntResult2 r) { r.r1 = s.weakCompareAndSet(false, true) ? 1 : 0; }
-        @Actor public void actor2(MyState s, IntResult2 r) { r.r2 = s.weakCompareAndSet(false, true) ? 1 : 0; }
+        @Actor
+        public void actor1(MyState s, IntResult2 r) {
+            r.r1 = s.weakCompareAndSet(false, true) ? 1 : 0;
+        }
+
+        @Actor
+        public void actor2(MyState s, IntResult2 r) {
+            r.r2 = s.weakCompareAndSet(false, true) ? 1 : 0;
+        }
     }
 
 }

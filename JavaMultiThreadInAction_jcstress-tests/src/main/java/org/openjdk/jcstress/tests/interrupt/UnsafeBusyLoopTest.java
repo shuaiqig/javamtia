@@ -35,7 +35,7 @@ import org.openjdk.jcstress.util.UnsafeHolder;
 
 @JCStressTest(Mode.Termination)
 @Outcome(id = "TERMINATED", expect = Expect.ACCEPTABLE, desc = "The thread had sucessfully terminated.")
-@Outcome(id = "STALE",      expect = Expect.ACCEPTABLE_INTERESTING, desc = "Thread had failed to respond.")
+@Outcome(id = "STALE", expect = Expect.ACCEPTABLE_INTERESTING, desc = "Thread had failed to respond.")
 @State
 public class UnsafeBusyLoopTest {
 

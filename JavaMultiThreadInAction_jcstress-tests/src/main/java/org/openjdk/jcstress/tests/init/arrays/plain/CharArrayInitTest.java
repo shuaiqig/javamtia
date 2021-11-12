@@ -49,10 +49,10 @@ public class CharArrayInitTest {
         if (arr == null) {
             r.r1 = r.r2 = r.r3 = r.r4 = 'N';
         } else {
-            r.r1 = (char)(arr[0] + 'A');
-            r.r2 = (char)(arr[1] + 'A');
-            r.r3 = (char)(arr[2] + 'A');
-            r.r4 = (char)(arr[3] + 'A');
+            r.r1 = (char) (arr[0] + 'A');
+            r.r2 = (char) (arr[1] + 'A');
+            r.r3 = (char) (arr[2] + 'A');
+            r.r4 = (char) (arr[3] + 'A');
         }
     }
 

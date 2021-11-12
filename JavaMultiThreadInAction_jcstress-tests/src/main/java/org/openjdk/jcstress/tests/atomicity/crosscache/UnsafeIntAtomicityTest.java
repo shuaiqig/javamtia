@@ -37,7 +37,7 @@ import java.util.Random;
 
 @JCStressTest
 @Description("Tests if Unsafe breaks the atomicity while doing cross cache-line reads/writes.")
-@Outcome(id = "[0, 0, 0, 0]",     expect = Expect.ACCEPTABLE, desc = "Seeing the default value, this is a legal race.")
+@Outcome(id = "[0, 0, 0, 0]", expect = Expect.ACCEPTABLE, desc = "Seeing the default value, this is a legal race.")
 @Outcome(id = "[-1, -1, -1, -1]", expect = Expect.ACCEPTABLE, desc = "Seeing the full value, this is a legal behavior.")
 @State
 public class UnsafeIntAtomicityTest {
@@ -47,7 +47,9 @@ public class UnsafeIntAtomicityTest {
      * random offset within the byte array.
      */
 
-    /** Array size: 256 bytes inevitably crosses the cache line on most implementations */
+    /**
+     * Array size: 256 bytes inevitably crosses the cache line on most implementations
+     */
     public static final int SIZE = 256;
 
     public static final Random RANDOM = new Random();
@@ -55,7 +57,9 @@ public class UnsafeIntAtomicityTest {
     public static final int ARRAY_BASE_SCALE = UnsafeHolder.U.arrayIndexScale(byte[].class);
     public static final int COMPONENT_SIZE = 4;
 
-    /** Alignment constraint: 4-bytes is default, for integers */
+    /**
+     * Alignment constraint: 4-bytes is default, for integers
+     */
     public static final int ALIGN = Integer.getInteger("align", COMPONENT_SIZE);
 
     public final byte[] bytes;
@@ -63,8 +67,8 @@ public class UnsafeIntAtomicityTest {
 
     public UnsafeIntAtomicityTest() {
         bytes = new byte[SIZE];
-        int index = RANDOM.nextInt((SIZE - COMPONENT_SIZE)/ALIGN)*ALIGN;
-        offset = ARRAY_BASE_OFFSET + ARRAY_BASE_SCALE*index;
+        int index = RANDOM.nextInt((SIZE - COMPONENT_SIZE) / ALIGN) * ALIGN;
+        offset = ARRAY_BASE_OFFSET + ARRAY_BASE_SCALE * index;
     }
 
     @Actor

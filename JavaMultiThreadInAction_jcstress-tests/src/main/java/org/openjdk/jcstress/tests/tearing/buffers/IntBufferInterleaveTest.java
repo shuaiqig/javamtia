@@ -41,7 +41,9 @@ import java.nio.IntBuffer;
 @State
 public class IntBufferInterleaveTest {
 
-    /** Array size: 256 bytes inevitably crosses the cache line on most implementations */
+    /**
+     * Array size: 256 bytes inevitably crosses the cache line on most implementations
+     */
     public static final int SIZE = 256;
 
     private final IntBuffer buffer = IntBuffer.allocate(SIZE);

@@ -26,7 +26,10 @@ package org.openjdk.jcstress.tests.singletons;
 
 public class SingletonUnsafe implements Singleton {
     Byte x;
-    public SingletonUnsafe() { x = 42; }
+
+    public SingletonUnsafe() {
+        x = 42;
+    }
 
     @Override
     public Byte x() {

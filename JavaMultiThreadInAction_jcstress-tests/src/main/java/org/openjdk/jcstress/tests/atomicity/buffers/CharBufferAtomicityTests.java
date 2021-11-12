@@ -46,8 +46,15 @@ public class CharBufferAtomicityTests {
     @JCStressTest
     @JCStressMeta(GradeChar.class)
     public static class CharTest {
-        @Actor public void actor1(MyState s)                { s.b.put(0, 'a');                                      }
-        @Actor public void actor2(MyState s, LongResult1 r) { r.r1 = s.b.get();                                     }
+        @Actor
+        public void actor1(MyState s) {
+            s.b.put(0, 'a');
+        }
+
+        @Actor
+        public void actor2(MyState s, LongResult1 r) {
+            r.r1 = s.b.get();
+        }
     }
 
 }

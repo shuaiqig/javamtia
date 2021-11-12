@@ -42,7 +42,9 @@ import java.nio.ByteOrder;
 @State
 public class DirectByteBufferInterleaveTest {
 
-    /** Array size: 256 bytes inevitably crosses the cache line on most implementations */
+    /**
+     * Array size: 256 bytes inevitably crosses the cache line on most implementations
+     */
     public static final int SIZE = 256;
 
     private final ByteBuffer buffer;
@@ -55,7 +57,7 @@ public class DirectByteBufferInterleaveTest {
     @Actor
     public void actor1() {
         for (int i = 0; i < SIZE; i += 2) {
-            buffer.put(i, (byte)1);
+            buffer.put(i, (byte) 1);
         }
     }
 

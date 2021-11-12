@@ -41,7 +41,9 @@ import java.nio.DoubleBuffer;
 @State
 public class DoubleBufferInterleaveTest {
 
-    /** Array size: 256 bytes inevitably crosses the cache line on most implementations */
+    /**
+     * Array size: 256 bytes inevitably crosses the cache line on most implementations
+     */
     public static final int SIZE = 256;
 
     public static final double D1 = Math.PI * 1;

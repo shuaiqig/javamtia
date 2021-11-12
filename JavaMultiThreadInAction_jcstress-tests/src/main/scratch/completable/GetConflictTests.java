@@ -34,10 +34,21 @@ public class GetConflictTests {
     public static final Throwable ERROR2 = new MyThrowable();
 
     public static abstract class BaseTest implements Actor2_Test<CompletableFuture<Integer>, int[]> {
-        @Override public abstract void actor1(CompletableFuture<Integer> future, int[] result);
-        @Override public abstract void actor2(CompletableFuture<Integer> future, int[] result);
-        @Override public CompletableFuture<Integer> newState() { return new CompletableFuture<Integer>(); }
-        @Override public int[] newResult() { return new int[2]; }
+        @Override
+        public abstract void actor1(CompletableFuture<Integer> future, int[] result);
+
+        @Override
+        public abstract void actor2(CompletableFuture<Integer> future, int[] result);
+
+        @Override
+        public CompletableFuture<Integer> newState() {
+            return new CompletableFuture<Integer>();
+        }
+
+        @Override
+        public int[] newResult() {
+            return new int[2];
+        }
     }
 
     public static class Complete_Complete_GetNow extends BaseTest {
@@ -137,9 +148,13 @@ public class GetConflictTests {
             try {
                 result[1] = future.getNow(-10);
             } catch (Throwable e) {
-                     if (e.getCause() == ERROR1) { result[1] = -1; }
-                else if (e.getCause() == ERROR2) { result[1] = -2; }
-                else                  { result[1] = -100; }
+                if (e.getCause() == ERROR1) {
+                    result[1] = -1;
+                } else if (e.getCause() == ERROR2) {
+                    result[1] = -2;
+                } else {
+                    result[1] = -100;
+                }
             }
         }
 
@@ -149,9 +164,13 @@ public class GetConflictTests {
             try {
                 result[1] = future.getNow(-10);
             } catch (Throwable e) {
-                if (e.getCause() == ERROR1) { result[1] = -1; }
-                else if (e.getCause() == ERROR2) { result[1] = -2; }
-                else                  { result[1] = -100; }
+                if (e.getCause() == ERROR1) {
+                    result[1] = -1;
+                } else if (e.getCause() == ERROR2) {
+                    result[1] = -2;
+                } else {
+                    result[1] = -100;
+                }
             }
         }
     }
@@ -163,9 +182,13 @@ public class GetConflictTests {
             try {
                 result[1] = future.get();
             } catch (Throwable e) {
-                     if (e.getCause() == ERROR1) { result[1] = -1; }
-                else if (e.getCause() == ERROR2) { result[1] = -2; }
-                else                  { result[1] = -100; }
+                if (e.getCause() == ERROR1) {
+                    result[1] = -1;
+                } else if (e.getCause() == ERROR2) {
+                    result[1] = -2;
+                } else {
+                    result[1] = -100;
+                }
             }
         }
 
@@ -175,9 +198,13 @@ public class GetConflictTests {
             try {
                 result[1] = future.get();
             } catch (Throwable e) {
-                     if (e.getCause() == ERROR1) { result[1] = -1; }
-                else if (e.getCause() == ERROR2) { result[1] = -2; }
-                else                  { result[1] = -100; }
+                if (e.getCause() == ERROR1) {
+                    result[1] = -1;
+                } else if (e.getCause() == ERROR2) {
+                    result[1] = -2;
+                } else {
+                    result[1] = -100;
+                }
             }
         }
     }
@@ -189,9 +216,13 @@ public class GetConflictTests {
             try {
                 result[1] = future.get();
             } catch (Throwable e) {
-                     if (e.getCause() == ERROR1) { result[1] = -1; }
-                else if (e.getCause() == ERROR2) { result[1] = -2; }
-                else                  { result[1] = -100; }
+                if (e.getCause() == ERROR1) {
+                    result[1] = -1;
+                } else if (e.getCause() == ERROR2) {
+                    result[1] = -2;
+                } else {
+                    result[1] = -100;
+                }
             }
         }
 
@@ -201,9 +232,13 @@ public class GetConflictTests {
             try {
                 result[1] = future.get();
             } catch (Throwable e) {
-                     if (e.getCause() == ERROR1) { result[1] = -1; }
-                else if (e.getCause() == ERROR2) { result[1] = -2; }
-                else                  { result[1] = -100; }
+                if (e.getCause() == ERROR1) {
+                    result[1] = -1;
+                } else if (e.getCause() == ERROR2) {
+                    result[1] = -2;
+                } else {
+                    result[1] = -100;
+                }
             }
         }
     }
@@ -215,9 +250,13 @@ public class GetConflictTests {
             try {
                 result[1] = future.getNow(-10);
             } catch (Throwable e) {
-                     if (e.getCause() == ERROR1) { result[1] = -1; }
-                else if (e.getCause() == ERROR2) { result[1] = -2; }
-                else                  { result[1] = -100; }
+                if (e.getCause() == ERROR1) {
+                    result[1] = -1;
+                } else if (e.getCause() == ERROR2) {
+                    result[1] = -2;
+                } else {
+                    result[1] = -100;
+                }
             }
         }
 
@@ -227,9 +266,13 @@ public class GetConflictTests {
             try {
                 result[1] = future.getNow(-10);
             } catch (Throwable e) {
-                if (e.getCause() == ERROR1) { result[1] = -1; }
-                else if (e.getCause() == ERROR2) { result[1] = -2; }
-                else                  { result[1] = -100; }
+                if (e.getCause() == ERROR1) {
+                    result[1] = -1;
+                } else if (e.getCause() == ERROR2) {
+                    result[1] = -2;
+                } else {
+                    result[1] = -100;
+                }
             }
         }
     }
@@ -241,9 +284,13 @@ public class GetConflictTests {
             try {
                 result[1] = future.get();
             } catch (Throwable e) {
-                     if (e.getCause() == ERROR1) { result[1] = -1; }
-                else if (e.getCause() == ERROR2) { result[1] = -2; }
-                else                  { result[1] = -100; }
+                if (e.getCause() == ERROR1) {
+                    result[1] = -1;
+                } else if (e.getCause() == ERROR2) {
+                    result[1] = -2;
+                } else {
+                    result[1] = -100;
+                }
             }
         }
 
@@ -254,9 +301,13 @@ public class GetConflictTests {
             try {
                 result[1] = future.get();
             } catch (Throwable e) {
-                if (e.getCause() == ERROR1) { result[1] = -1; }
-                else if (e.getCause() == ERROR2) { result[1] = -2; }
-                else                  { result[1] = -100; }
+                if (e.getCause() == ERROR1) {
+                    result[1] = -1;
+                } else if (e.getCause() == ERROR2) {
+                    result[1] = -2;
+                } else {
+                    result[1] = -100;
+                }
             }
         }
     }
@@ -268,9 +319,13 @@ public class GetConflictTests {
             try {
                 result[1] = future.getNow(-10);
             } catch (Throwable e) {
-                     if (e.getCause() == ERROR1) { result[1] = -1; }
-                else if (e.getCause() == ERROR2) { result[1] = -2; }
-                else                  { result[1] = -100; }
+                if (e.getCause() == ERROR1) {
+                    result[1] = -1;
+                } else if (e.getCause() == ERROR2) {
+                    result[1] = -2;
+                } else {
+                    result[1] = -100;
+                }
             }
         }
 
@@ -281,9 +336,13 @@ public class GetConflictTests {
             try {
                 result[1] = future.getNow(-10);
             } catch (Throwable e) {
-                     if (e.getCause() == ERROR1) { result[1] = -1; }
-                else if (e.getCause() == ERROR2) { result[1] = -2; }
-                else                  { result[1] = -100; }
+                if (e.getCause() == ERROR1) {
+                    result[1] = -1;
+                } else if (e.getCause() == ERROR2) {
+                    result[1] = -2;
+                } else {
+                    result[1] = -100;
+                }
             }
         }
     }

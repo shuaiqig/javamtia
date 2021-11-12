@@ -31,10 +31,21 @@ import java.util.concurrent.CompletableFuture;
 public class GetRaceTests {
 
     public static abstract class BaseTest implements Actor1_Effector1_Test<CompletableFuture<Integer>, int[]> {
-        @Override public abstract void actor1(CompletableFuture<Integer> future);
-        @Override public abstract void observe(CompletableFuture<Integer> future, int[] result);
-        @Override public CompletableFuture<Integer> newState() { return new CompletableFuture<Integer>(); }
-        @Override public int[] newResult() { return new int[1]; }
+        @Override
+        public abstract void actor1(CompletableFuture<Integer> future);
+
+        @Override
+        public abstract void observe(CompletableFuture<Integer> future, int[] result);
+
+        @Override
+        public CompletableFuture<Integer> newState() {
+            return new CompletableFuture<Integer>();
+        }
+
+        @Override
+        public int[] newResult() {
+            return new int[1];
+        }
     }
 
     public static class Force_Get extends BaseTest {

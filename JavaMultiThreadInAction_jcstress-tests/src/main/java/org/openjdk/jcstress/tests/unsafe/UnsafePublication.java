@@ -74,6 +74,7 @@ public class UnsafePublication {
 
     static class MyObject {
         int x00, x01, x02, x03;
+
         public MyObject(int x) {
             x00 = x;
             x01 = x;

@@ -27,9 +27,11 @@ public class ThreadCreationCmp {
 
     static class Counter {
         private int count = 0;
+
         public void increment() {
             count++;
         }
+
         public int value() {
             return count;
         }
@@ -37,6 +39,7 @@ public class ThreadCreationCmp {
 
     static class CountingTask implements Runnable {
         private Counter counter = new Counter();
+
         @Override
         public void run() {
             for (int i = 0; i < 100; i++) {
@@ -45,6 +48,7 @@ public class ThreadCreationCmp {
             }
             System.out.println("CountingTask:" + counter.value());
         }
+
         private void doSomething() {
             // 使当前线程休眠随机时间
             Tools.randomPause(80);
@@ -53,6 +57,7 @@ public class ThreadCreationCmp {
 
     static class CountingThread extends Thread {
         private Counter counter = new Counter();
+
         @Override
         public void run() {
             for (int i = 0; i < 100; i++) {
@@ -61,6 +66,7 @@ public class ThreadCreationCmp {
             }
             System.out.println("CountingThread:" + counter.value());
         }
+
         private void doSomething() {
             // 使当前线程休眠随机时间
             Tools.randomPause(80);

@@ -43,9 +43,9 @@ import sun.misc.Contended;
 @Outcome(id = "[0, 1, 1]", expect = Expect.ACCEPTABLE, desc = "Consistent ordered reads.")
 @Outcome(id = "[1, 0, 1]", expect = Expect.ACCEPTABLE, desc = "Consistent ordered reads.")
 @Outcome(id = "[1, 1, 1]", expect = Expect.ACCEPTABLE, desc = "Consistent ordered reads.")
-@Outcome(id = "[1, 1, 0]", expect = Expect.ACCEPTABLE_INTERESTING,  desc = "Lost or reordered read of x.")
-@Outcome(id = "[0, 1, 0]", expect = Expect.ACCEPTABLE_INTERESTING,  desc = "Lost or reordered read of x.")
-@Outcome(id = "[1, 0, 0]", expect = Expect.ACCEPTABLE_INTERESTING,  desc = "Lost or reordered read of x.")
+@Outcome(id = "[1, 1, 0]", expect = Expect.ACCEPTABLE_INTERESTING, desc = "Lost or reordered read of x.")
+@Outcome(id = "[0, 1, 0]", expect = Expect.ACCEPTABLE_INTERESTING, desc = "Lost or reordered read of x.")
+@Outcome(id = "[1, 0, 0]", expect = Expect.ACCEPTABLE_INTERESTING, desc = "Lost or reordered read of x.")
 @State
 public class UnfencedReadTwiceTest {
 

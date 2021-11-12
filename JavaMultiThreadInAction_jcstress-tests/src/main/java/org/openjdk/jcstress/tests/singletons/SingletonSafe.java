@@ -27,7 +27,9 @@ package org.openjdk.jcstress.tests.singletons;
 public class SingletonSafe implements Singleton {
     final Byte x;
 
-    public SingletonSafe() { x = 42; }
+    public SingletonSafe() {
+        x = 42;
+    }
 
     @Override
     public Byte x() {

@@ -41,7 +41,9 @@ import java.nio.LongBuffer;
 @State
 public class LongBufferInterleaveTest {
 
-    /** Array size: 256 bytes inevitably crosses the cache line on most implementations */
+    /**
+     * Array size: 256 bytes inevitably crosses the cache line on most implementations
+     */
     public static final int SIZE = 256;
 
     private final LongBuffer buffer = LongBuffer.allocate(SIZE);

@@ -53,10 +53,10 @@ public class CharFieldsTest {
         if (d == null) {
             r.r1 = r.r2 = r.r3 = r.r4 = 'N';
         } else {
-            r.r1 = (char)(d.v0 + 'A');
-            r.r2 = (char)(d.v1 + 'A');
-            r.r3 = (char)(d.v2 + 'A');
-            r.r4 = (char)(d.v3 + 'A');
+            r.r1 = (char) (d.v0 + 'A');
+            r.r2 = (char) (d.v1 + 'A');
+            r.r3 = (char) (d.v2 + 'A');
+            r.r4 = (char) (d.v3 + 'A');
         }
     }
 

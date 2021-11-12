@@ -74,7 +74,7 @@ public class FinalWrapper {
         public Singleton getInstance(Supplier<Singleton> s) {
             FW w = wrapper;
             if (w == null) {
-                synchronized(this) {
+                synchronized (this) {
                     w = wrapper;
                     if (w == null) {
                         w = new FW(s.get());
@@ -87,6 +87,7 @@ public class FinalWrapper {
 
         private static class FW {
             public final Singleton instance;
+
             public FW(Singleton instance) {
                 this.instance = instance;
             }
